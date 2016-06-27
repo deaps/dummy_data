@@ -1,4 +1,9 @@
-from setuptools import setup
+# -*- coding: utf-8 -*-
+
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 setup(
     name='dummy_data',
@@ -9,5 +14,6 @@ setup(
     author_email='joaoandrade2@protonmail.com',
     license='MIT',
     packages=['dummy_data'],
-    zip_safe=True
+    keywords=['dummy files', 'dummy folders', 'filesystem'],
+    zip_safe=False
 )
