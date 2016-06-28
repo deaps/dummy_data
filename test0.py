@@ -1,4 +1,4 @@
-"""#!/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import dummy_data
@@ -19,4 +19,4 @@ tree = Folder(
     ]
 )
 
-dummy_data.print_data(tree)"""
+dummy_data.create(tree)

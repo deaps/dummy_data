@@ -29,14 +29,34 @@ __author__ = 'João Andrade'
 __email__ = 'joaoandrade2@protonmail.com'
 __version__ = '0.1'
 
-from Models import Folder, File
+import os
+from dummy_data.data import Folder, File
 
 def build(tree):
-    try:
-        print_data(tree)
-    except Exception as e:
-        print(e)
-        raise
+    if type(tree) is Folder:
+        for item in tree.content:
+            item.path = os.path.join(tree.path, item.path)
+            if type(item) is Folder:
+                build(item)
+
+
+def create(tree):
+    build(tree)
+    create_folder(tree.path, tree.content)
+
+def create_file(path, content):
+    fo = open(path, "w+")
+    fo.write(content)
+    fo.close()
+
+def create_folder(path, content):
+    if not os.path.exists(path):
+        os.makedirs(path)
+    for item in content:
+        if type(item) is Folder:
+            create_folder(item.path, item.content)
+        elif type(item) is File:
+            create_file(item.path, item.content)
 
 def print_data(top, prefix = 0):
     if type(top) is Folder:
