@@ -1,9 +1,12 @@
-#!/usr/bin/env python
+"""#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import dummy_data
+
+from dummy_data import print_data, create
+from dummy_data.random import random_structure
 from dummy_data.data import Folder, File
 
+# Create User Tree
 tree = Folder(
     "C:\\Test",
     [
@@ -14,9 +17,15 @@ tree = Folder(
                 File("F.txt", "0")
             ]
         ),
-        Folder("Pasta2",[]),
+        Folder("Pasta2", []),
         File("Ficheiro.txt", "COiso e tal")
     ]
 )
 
-dummy_data.create(tree)
+create(tree)
+
+# Create random Tree
+f = random_structure("C:\\Testtt", 10, 2)
+print_data(f)
+# create(f)
+"""

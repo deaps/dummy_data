@@ -5,6 +5,7 @@ class Item(object):
     def __str__(self):
         return self.path
 
+
 class File(Item):
 
     def __init__(self, path, content):
@@ -14,9 +15,10 @@ class File(Item):
     def __str__(self):
         return str(Item) + " - " + self.content
 
+
 class Folder(Item):
 
-    def __init__(self, path, content = []):
+    def __init__(self, path, content=[]):
         Item.__init__(self, path)
         self.content = content
 

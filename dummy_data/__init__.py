@@ -10,8 +10,8 @@
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -20,6 +20,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os
+from dummy_data.data import Folder, File
 
 """
 
@@ -29,8 +31,6 @@ __author__ = 'João Andrade'
 __email__ = 'joaoandrade2@protonmail.com'
 __version__ = '0.1'
 
-import os
-from dummy_data.data import Folder, File
 
 def build(tree):
     if type(tree) is Folder:
@@ -44,10 +44,12 @@ def create(tree):
     build(tree)
     create_folder(tree.path, tree.content)
 
+
 def create_file(path, content):
     fo = open(path, "w+")
     fo.write(content)
     fo.close()
+
 
 def create_folder(path, content):
     if not os.path.exists(path):
@@ -58,7 +60,8 @@ def create_folder(path, content):
         elif type(item) is File:
             create_file(item.path, item.content)
 
-def print_data(top, prefix = 0):
+
+def print_data(top, prefix=0):
     if type(top) is Folder:
         print("-" * prefix + "-> Folder name: " + top.path)
 
@@ -67,9 +70,7 @@ def print_data(top, prefix = 0):
                 print_data(item, 4 + prefix)
             else:
                 print("-" * prefix + "-> File name: " +
-                    item.path + " Content: " + item.content
-                )
+                      item.path + " Content: " + item.content)
     else:
         print("-" * prefix + "-> File name: " + top.path +
-            "Content: " + top.content
-        )
+              "Content: " + top.content)
