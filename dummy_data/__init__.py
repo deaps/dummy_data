@@ -29,7 +29,7 @@ from dummy_data.random import random_structure as rs
 
 __author__ = 'João Andrade'
 __email__ = 'joaoandrade2@protonmail.com'
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 
 def create(tree):
