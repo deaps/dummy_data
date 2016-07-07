@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name='dummy_data',
-    version='0.1',
+    version='0.0.1',
     description='Create dummy data dynamically.',
     url='http://github.com/deaps/dummy_data',
     author='João Andrade',

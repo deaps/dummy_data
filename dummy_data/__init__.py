@@ -22,14 +22,19 @@
 # SOFTWARE.
 import os
 from dummy_data.data import Folder, File
-
+from dummy_data.random import random_structure as rs
 """
 
 """
 
 __author__ = 'João Andrade'
 __email__ = 'joaoandrade2@protonmail.com'
-__version__ = '0.1'
+__version__ = '0.0.1'
+
+
+def create(tree):
+    build(tree)
+    create_folder(tree.path, tree.content)
 
 
 def build(tree):
@@ -38,11 +43,6 @@ def build(tree):
             item.path = os.path.join(tree.path, item.path)
             if type(item) is Folder:
                 build(item)
-
-
-def create(tree):
-    build(tree)
-    create_folder(tree.path, tree.content)
 
 
 def create_file(path, content):
@@ -59,6 +59,10 @@ def create_folder(path, content):
             create_folder(item.path, item.content)
         elif type(item) is File:
             create_file(item.path, item.content)
+
+
+def random_structure(path, top_ceiling, levels):
+    return rs(path, top_ceiling, levels)
 
 
 def print_data(top, prefix=0):
