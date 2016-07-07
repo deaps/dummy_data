@@ -1,8 +1,13 @@
-# Python dummy_data Package
+=========================
+Python dummy_data Package
+=========================
 
 Create dummy data dynamically.
 
-## Simple Example
+Simple Example
+--------------
+
+.. code:: python
 
     import dummy_data
 
