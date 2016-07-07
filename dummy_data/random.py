@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 import math
-from random import uniform, randint
+import lorem
+from random import uniform, randint, choice
 from dummy_data.data import Folder, File
 
 
@@ -17,7 +17,9 @@ def random_structure(path, top_ceiling, levels):
         if (rand_type == 1 and levels > 0):
             item = random_structure("Folder " + str(i), top_ceiling, levels-1)
         else:
-            item = File("File " + str(i), "Test")
+            text = lorem.text()
+            title = choice(text.split())
+            item = File(title + str(i) + ".txt", text)
 
         folder.content.append(item)
 

@@ -15,5 +15,8 @@ setup(
     license='MIT',
     packages=['dummy_data'],
     keywords=['dummy files', 'dummy folders', 'filesystem'],
+    install_requires=[
+        "lorem"
+    ],
     zip_safe=False
 )
