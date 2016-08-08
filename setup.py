@@ -10,7 +10,7 @@ with open('README.rst') as readme_file:
 
 setup(
     name='dummy_data',
-    version='0.0.2',
+    version='0.0.3',
     description='Create dummy data dynamically.',
     long_description=readme,
     url='http://github.com/deaps/dummy_data',

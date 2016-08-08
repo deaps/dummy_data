@@ -22,14 +22,14 @@
 # SOFTWARE.
 import os
 from dummy_data.data import Folder, File
-from dummy_data.random import random_structure as rs
+from dummy_data.dummy_random import random_structure as rs
 """
 
 """
 
 __author__ = 'João Andrade'
 __email__ = 'joaoandrade2@protonmail.com'
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 
 def create(tree):
